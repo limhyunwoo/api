@@ -33,10 +33,22 @@ public class SortDemo {
 	}
 	
 	public Vector<Integer>getAscSort2(int[]arr){
+		int []a = new int [arr.length];
 		Arrays.sort(arr);
-		for (int k : arr){
-			vec.addElement(k);
+		
+//		for (int k : arr){
+//			vec.addElement(k);
+//		}
+		
+		for(int i = 0; i < arr.length; i++ ){
+			a[i] = arr[arr.length-i-1];
 		}
+		arr = a;
+		for(int g : a){
+			vec.addElement(g);
+		}
+		
+		
 		return vec;
 		
 	}
@@ -49,7 +61,7 @@ public class SortDemo {
 		list1 = util.getAscSort1(arr);
 		list2 = util2.getAscSort2(arr);
 		System.out.println("스왑알고리즘을 사용한 오름차순 정렬 : " + list1.toString());
-		System.out.println("Arrays.sort() 사용한 오름차순 정렬 : " + list2.toString());
+		System.out.println("Arrays.sort() 사용한 내림차순 정렬 : " + list2.toString());
 		
 	}
 	
